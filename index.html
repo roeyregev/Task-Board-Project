@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,800;1,200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>My Task Board</title>
+</head>
+
+<body>
+    <div id="left-gradient"></div>
+    <div id="right-gradient"></div>
+
+    <div id="grid-container">
+
+        <div class="main-panel-container">
+            <div id="main-panel">
+                <h2>What would you like to do not today?</h2>
+
+                <form onsubmit="addTask(); fadeIn()">
+                    <div class="large-icons-div">
+                        <label for="dateInput">
+                            <div class="large-icon large-icon-date"></div>
+                        </label>
+                        <input type="date" name="date" id="dateInput">
+                    </div>
+                    <div class="large-icons-div">
+                        <label for="timeInput">
+                            <div class="large-icon large-icon-time"></div>
+                        </label>
+                        <input type="time" name="time" id="timeInput">
+                    </div>
+                    <div id="subject-container">
+                        <input type="text" id="subjectInput" placeholder="Type your subject" maxlength="20">
+                    </div>
+                    <div class="text-area-div">
+                        <textarea name="note-content" id="noteContentInput" cols="33" rows="6" maxlength="120"
+                            placeholder="What’s the task?"></textarea>
+                        <div class="lines-pattern"></div>
+                    </div>
+                    <div id="pinSelectionContainer">
+                        <div class="radio-button-container">
+                            <input type="radio" class="radio-button" name="pin" checked id="redPin" value="redPin">
+                            <label class="radio-label" for="redPin"><svg width="60" height="60" viewBox="0 0 60 60"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#F47373"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#F47373">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#F47373"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#F47373">
+                                    </path>
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#F47373"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#F47373">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#F47373"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#F47373">
+                                    </path>
+                                    <path d="M32.8406 38.6331H27.8164L30.3285 52.4496L32.8406 38.6331Z" fill="#9078A2">
+                                    </path>
+                                </svg></label>
+                        </div>
+                        <div class="radio-button-container">
+                            <input type="radio" class="radio-button" name="pin" id="orangePin" value="orangePin">
+                            <label class="radio-label" for="orangePin"><svg width="60" height="60" viewBox="0 0 60 60"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#F47373"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#F47373">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#F47373"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#F47373">
+                                    </path>
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#FA8937"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#FA8937">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#FA8937">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#FA8937">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#FA8937">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#FA8937"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#FA8937">
+                                    </path>
+                                    <path d="M32.8406 38.6331H27.8164L30.3285 52.4496L32.8406 38.6331Z" fill="#9078A2">
+                                    </path>
+                                </svg></label>
+                        </div>
+                        <div class="radio-button-container">
+                            <input type="radio" class="radio-button" name="pin" id="greenPin">
+                            <label class="radio-label" for="greenPin"><svg width="60" height="60" viewBox="0 0 60 60"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#F47373"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#F47373">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#F47373">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#F47373"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#F47373">
+                                    </path>
+                                    <path
+                                        d="M42.8891 31.0967C42.8891 32.8309 37.2656 34.2368 30.3286 34.2368C23.3917 34.2368 17.7682 32.8309 17.7682 31.0967C17.7682 29.3624 23.3917 27.9565 30.3286 27.9565C37.2656 27.9565 42.8891 29.3624 42.8891 31.0967Z"
+                                        fill="#F47373"></path>
+                                    <path
+                                        d="M20.2803 14.7681L40.377 14.7681L39.7931 16.0333C37.8354 20.2748 38.3935 25.2523 41.2417 28.9551L42.8891 31.0967L17.7682 31.0967L19.1484 29.4655C22.4835 25.524 23.0669 19.9432 20.6191 15.3972L20.2803 14.7681Z"
+                                        fill="#72B078"></path>
+                                    <ellipse cx="30.3286" cy="31.7247" rx="16.3286" ry="3.14011" fill="#72B078">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="35.4928" rx="16.3286" ry="3.14011" fill="#72B078">
+                                    </ellipse>
+                                    <path d="M14 31.7247L46.6572 31.7247V35.4929L14 35.4929V31.7247Z" fill="#72B078">
+                                    </path>
+                                    <ellipse cx="30.3286" cy="15.396" rx="10.0484" ry="3.14011" fill="#72B078">
+                                    </ellipse>
+                                    <ellipse cx="30.3286" cy="14.14" rx="10.0484" ry="3.14011" fill="#72B078"></ellipse>
+                                    <path d="M20.2803 14.14L40.377 14.14V15.3961L20.2803 15.3961V14.14Z" fill="#72B078">
+                                    </path>
+                                    <path d="M32.8406 38.6331H27.8164L30.3285 52.4496L32.8406 38.6331Z" fill="#9078A2">
+                                    </path>
+                                </svg></label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="button main-button">Add Task</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div>
+            <div id="title-area">
+                <h1>My Task Board</h1>
+                <button id="clearBoardButton" onclick="clearBoard()">
+                    <svg id="burnIcon" width="36" height="32" viewBox="0 -4 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="burnIcon"
+                            d="M19.4627 14.2836C21.0183 10.5349 18.846 5.77303 15.146 4C15.3515 7.14079 12.653 10.2601 11.4459 11.5987C9.80149 13.4224 6.66675 15.55 6.66675 22.0342C6.66675 26.0282 9.77415 28.4366 13.2446 29.3333C9.95566 26.8467 9.85288 19.9066 16.1737 14.5875C14.3237 18.2349 13.6557 23.0474 16.8932 24.2125C18.1265 24.6564 19.4113 23.3513 19.0002 22.0342C20.9529 23.7059 22.0835 27.0713 19.0002 29.2004C23.3521 27.5564 28.1787 22.231 23.2655 14.8408C23.6766 16.8671 22.2377 17.5257 21.2099 17.5257C20.1821 17.5257 18.5376 16.5125 19.4627 14.2836Z"
+                            fill="#FF8E8E"/></svg>Clear board</button>
+            </div>
+
+            <div id="notesArea" class="notes-area"></div>
+        </div>
+    </div>
+</body>
+
+</html>
